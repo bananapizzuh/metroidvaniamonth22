@@ -29,5 +29,7 @@ func physics_update(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump"):
 		state_machine.transition_to("Air", {do_jump = true})
+	elif Input.is_action_just_pressed("roll"):
+		state_machine.transition_to("Roll")
 	elif player.velocity.x == 0:
 		state_machine.transition_to("Idle")
