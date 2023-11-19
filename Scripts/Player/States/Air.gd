@@ -1,15 +1,20 @@
 extends State
 
-# If we get a message asking us to jump, we jump.
+var player: Player
+var animator: AnimatedSprite2D
 
-@export var player: Player
-@export var animator: AnimatedSprite2D
+
+func jump():
+	animator.play("jump")
+	player.velocity.y = -player.jump_force
+	player.can_air_roll = true
+
 
 func enter(msg := {}) -> void:
+	player = state_machine.player
+	animator = state_machine.animator
 	if msg.has("do_jump"):
-		animator.play("jump")
-		player.velocity.y = -player.jump_force
-		
+		jump()
 
 
 func physics_update(delta: float) -> void:
@@ -21,7 +26,7 @@ func physics_update(delta: float) -> void:
 		player.velocity.x = player.speed
 		animator.flip_h = false
 	else:
-		player.velocity.x = 0	
+		player.velocity.x = 0
 	# Vertical movement.
 	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
@@ -33,5 +38,5 @@ func physics_update(delta: float) -> void:
 			state_machine.transition_to("Idle")
 		else:
 			state_machine.transition_to("Run")
-	
-	
+	elif Input.is_action_pressed("roll") and player.air_roll_unlocked and player.can_air_roll:
+		state_machine.transition_to("Roll")

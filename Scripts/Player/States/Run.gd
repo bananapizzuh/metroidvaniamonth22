@@ -1,12 +1,16 @@
 # Run.gd
 extends State
 
-@export var player: Player
-@export var animator: AnimatedSprite2D
-	
+var player: Player
+var animator: AnimatedSprite2D
+
+
 func enter(msg := {}) -> void:
+	player = state_machine.player
+	animator = state_machine.animator
 	animator.play("run")
-	
+
+
 func physics_update(delta: float) -> void:
 	# Notice how we have some code duplication between states. That's inherent to the pattern,
 	# although in production, your states will tend to be more complex and duplicate code
@@ -22,8 +26,8 @@ func physics_update(delta: float) -> void:
 		player.velocity.x = player.speed
 		animator.flip_h = false
 	else:
-		player.velocity.x = 0	
-	
+		player.velocity.x = 0
+
 	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
 
