@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bejokia73p1jp"]
+[gd_scene load_steps=58 format=3 uid="uid://bejokia73p1jp"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_qpp2u"]
 [ext_resource type="Texture2D" uid="uid://chl2b2artj0x7" path="res://Assets/Player/AirSpinAnim.png" id="2_1pwwl"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/Run.gd" id="10_kd1vc"]
 [ext_resource type="Script" path="res://Scripts/Player/States/Air.gd" id="11_84vun"]
 [ext_resource type="Script" path="res://Scripts/Player/States/Roll.gd" id="12_c3557"]
+[ext_resource type="Texture2D" uid="uid://ch3688w36ojul" path="res://Assets/The_Nether_-_Nether_Wastes.webp" id="13_6bjhe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0p0i"]
 atlas = ExtResource("2_1pwwl")
@@ -336,11 +337,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ms5k2"]
 size = Vector2(17, 29)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ioxh"]
+=======
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_qpp2u")
 air_roll_unlocked = true
-metadata/_edit_group_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7cimd")
@@ -369,3 +375,34 @@ script = ExtResource("11_84vun")
 
 [node name="Roll" type="Node" parent="StateMachine"]
 script = ExtResource("12_c3557")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1221.0
+offset_top = -687.0
+offset_right = -407.0
+offset_bottom = -229.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_6bjhe")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -149.5
+offset_top = -101.0
+offset_right = 149.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ioxh")
