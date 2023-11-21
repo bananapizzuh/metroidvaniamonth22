@@ -1,17 +1,8 @@
-<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://c56iu7m3olqrr"]
 
 [ext_resource type="Texture2D" uid="uid://xx3ysdmcf33b" path="res://Assets/IcyHell.png" id="1_k1q1d"]
 [ext_resource type="PackedScene" uid="uid://bejokia73p1jp" path="res://Scenes/Player.tscn" id="2_k0xda"]
 [ext_resource type="Script" path="res://Scripts/DialogTest.gd" id="4_an1r2"]
-=======
-[gd_scene load_steps=7 format=3 uid="uid://c56iu7m3olqrr"]
-
-[ext_resource type="Texture2D" uid="uid://xx3ysdmcf33b" path="res://Assets/IcyHell.png" id="1_k1q1d"]
-[ext_resource type="PackedScene" uid="uid://bejokia73p1jp" path="res://Scenes/Player.tscn" id="2_k0xda"]
-[ext_resource type="Texture2D" uid="uid://b2fsijdlganou" path="res://Assets/Background1.png" id="3_6tmdp"]
-[ext_resource type="Script" path="res://Scripts/Background.gd" id="4_gdvkd"]
->>>>>>> 4199736837b6277eab69370d8e277bb4a3511473
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2ewd"]
 texture = ExtResource("1_k1q1d")
@@ -113,13 +104,9 @@ position = Vector2(-4.76837e-07, -2.38419e-07)
 scale = Vector2(20, 20)
 texture = SubResource("CanvasTexture_jratl")
 
-<<<<<<< HEAD
-[node name="DialogManager" type="Node" parent="."]
-=======
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 z_index = -1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_6tmdp")
 region_rect = Rect2(-4, -3.5, 620, 400)
 script = ExtResource("4_gdvkd")
->>>>>>> 4199736837b6277eab69370d8e277bb4a3511473

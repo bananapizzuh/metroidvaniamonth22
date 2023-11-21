@@ -338,6 +338,7 @@ animations = [{
 size = Vector2(17, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ioxh"]
+=======
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
