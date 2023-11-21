@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg5ilhqvsdfsx"
-path="res://.godot/imported/JumpAnim.png-f668b6f705dff377fed76d6adb2c69c8.ctex"
+uid="uid://chfgkhia1077p"
+path="res://.godot/imported/RollAnim.png-9be5d132a6e4954399e3aaee6d436563.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/JumpAnim.png"
-dest_files=["res://.godot/imported/JumpAnim.png-f668b6f705dff377fed76d6adb2c69c8.ctex"]
+source_file="res://Assets/Player/RollAnim.png"
+dest_files=["res://.godot/imported/RollAnim.png-9be5d132a6e4954399e3aaee6d436563.ctex"]
 
 [params]
 

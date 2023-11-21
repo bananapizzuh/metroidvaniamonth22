@@ -25,6 +25,7 @@ func enter(_msg := {}) -> void:
 		animator.play("roll")
 	else:
 		animator.play("air_spin")
+	animator.frame_changed.connect(create_trail)
 
 
 func exit():
@@ -33,8 +34,6 @@ func exit():
 
 func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity * delta
-
-	animator.frame_changed.connect(create_trail)
 
 	if animator.get_animation() == "roll":
 		if animator.get_frame() == 6:
