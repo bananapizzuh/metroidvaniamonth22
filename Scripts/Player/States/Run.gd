@@ -3,11 +3,13 @@ extends State
 
 var player: Player
 var animator: AnimatedSprite2D
+var dialog_box: RichTextLabel
 
-
-func enter(msg := {}) -> void:
+func enter(_msg := {}) -> void:
 	player = state_machine.player
 	animator = state_machine.animator
+	dialog_box = state_machine.dialog_box
+	
 	animator.play("run")
 
 
@@ -37,3 +39,5 @@ func physics_update(delta: float) -> void:
 		state_machine.transition_to("Roll")
 	elif player.velocity.x == 0:
 		state_machine.transition_to("Idle")
+	if dialog_box.visible:
+		state_machine.transition_to("Dialog")

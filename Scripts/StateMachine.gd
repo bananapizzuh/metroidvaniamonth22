@@ -6,6 +6,7 @@ signal transitioned(state_name)
 @onready var state: State = initial_state
 @export var player: Player
 @export var animator: AnimatedSprite2D
+@export var dialog_box: RichTextLabel
 
 
 func _ready() -> void:

@@ -238,7 +238,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 14.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -304,7 +304,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"roll",
-"speed": 14.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -340,13 +340,14 @@ animations = [{
 size = Vector2(17, 29)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfc3s"]
-content_margin_left = 15.0
+content_margin_left = 10.0
 content_margin_top = 10.0
-content_margin_right = 15.0
-content_margin_bottom = 15.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 texture = ExtResource("13_5ph5b")
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_qpp2u")
 air_roll_unlocked = true
 metadata/_edit_group_ = true

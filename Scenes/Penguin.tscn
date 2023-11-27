@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cacl6iqkog554"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Penguin.gd" id="1_luqbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnojn"]
+size = Vector2(20, 41)
+
+[node name="Penguin" type="Area2D"]
+position = Vector2(516, 64)
+script = ExtResource("1_luqbq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jnojn")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-100, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
